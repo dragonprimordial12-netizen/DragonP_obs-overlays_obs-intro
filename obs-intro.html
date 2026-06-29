@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Dragon Primordial — Intro</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{width:1920px;height:1080px;background:#000;overflow:hidden;font-family:'Segoe UI',sans-serif;}
+
+.screen{width:1920px;height:1080px;position:relative;overflow:hidden;background:#000;}
+
+.sparks{position:absolute;inset:0;pointer-events:none;}
+.spark{position:absolute;border-radius:50%;animation:rise linear infinite;}
+@keyframes rise{0%{transform:translateY(0) scale(1);opacity:.9;}100%{transform:translateY(-120px) scale(0);opacity:0;}}
+
+.ring{position:absolute;border-radius:50%;border:1.5px solid;animation:expand linear infinite;}
+@keyframes expand{0%{width:0;height:0;opacity:.7;transform:translate(-50%,-50%);}100%{width:1200px;height:1200px;opacity:0;transform:translate(-50%,-50%);}}
+
+.glow{position:absolute;border-radius:50%;filter:blur(120px);animation:gpulse 3s ease-in-out infinite alternate;}
+@keyframes gpulse{0%{opacity:.25;transform:scale(1);}100%{opacity:.5;transform:scale(1.2);}}
+
+.scan{position:absolute;left:0;right:0;height:2px;background:rgba(255,0,0,.12);animation:scn 4s linear infinite;}
+@keyframes scn{0%{top:-2px;}100%{top:1082px;}}
+
+.corner{position:absolute;width:80px;height:80px;border-color:#6b0000;border-style:solid;opacity:.7;}
+.ctleft{top:30px;left:30px;border-width:3px 0 0 3px;border-radius:6px 0 0 0;}
+.ctright{top:30px;right:30px;border-width:3px 3px 0 0;border-radius:0 6px 0 0;}
+.cbleft{bottom:30px;left:30px;border-width:0 0 3px 3px;border-radius:0 0 0 6px;}
+.cbright{bottom:30px;right:30px;border-width:0 3px 3px 0;border-radius:0 0 6px 0;}
+
+.hline{position:absolute;left:60px;right:60px;height:1px;background:linear-gradient(90deg,transparent,#6b0000,#cc0000,#6b0000,transparent);}
+
+.main-title{font-size:96px;font-weight:900;color:#fff;letter-spacing:6px;text-transform:uppercase;line-height:1;text-align:center;}
+.title-glow{text-shadow:0 0 40px #ff0000,0 0 80px #cc0000,0 0 120px #8b0000;animation:tglow 2s ease-in-out infinite alternate;}
+@keyframes tglow{0%{text-shadow:0 0 30px #ff0000,0 0 60px #cc0000;}100%{text-shadow:0 0 60px #ff4444,0 0 100px #ff0000,0 0 140px #cc0000;}}
+
+.subtitle{font-size:22px;letter-spacing:10px;color:#cc4444;text-transform:uppercase;text-align:center;margin-top:14px;}
+.badge{display:inline-block;background:#6b0000;color:#ffaaaa;font-size:14px;letter-spacing:4px;padding:6px 20px;border:1px solid #cc0000;text-transform:uppercase;margin-top:18px;}
+
+.bottom-bar{position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,transparent,#8b0000,#cc0000,#ff0000,#cc0000,#8b0000,transparent);}
+.top-bar{position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,transparent,#8b0000,#cc0000,#ff0000,#cc0000,#8b0000,transparent);}
+
+.center-col{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:0;}
+
+.dragon-svg{display:block;margin:0 auto 20px;}
+
+.social-row{display:flex;gap:40px;margin-top:30px;justify-content:center;}
+.social-pill{background:rgba(139,0,0,.4);border:1px solid #8b0000;padding:8px 24px;color:#ffaaaa;font-size:16px;letter-spacing:2px;border-radius:2px;}
+</style>
+</head>
+<body>
+
+<div class="screen" id="intro">
+  <div class="glow" style="width:600px;height:600px;background:#8b0000;left:50%;top:50%;transform:translate(-50%,-50%);"></div>
+  <div class="glow" style="width:300px;height:300px;background:#ff0000;left:50%;top:50%;transform:translate(-50%,-50%);animation-delay:1.5s;"></div>
+  <div class="ring" style="border-color:#cc000055;left:50%;top:50%;animation-duration:4s;"></div>
+  <div class="ring" style="border-color:#8b000033;left:50%;top:50%;animation-duration:4s;animation-delay:1.3s;"></div>
+  <div class="ring" style="border-color:#ff000022;left:50%;top:50%;animation-duration:4s;animation-delay:2.6s;"></div>
+  <div class="scan"></div>
+  <div class="corner ctleft"></div>
+  <div class="corner ctright"></div>
+  <div class="corner cbleft"></div>
+  <div class="corner cbright"></div>
+  <div class="hline" style="top:120px;"></div>
+  <div class="hline" style="bottom:120px;"></div>
+  <div class="sparks" id="sp-intro"></div>
+  <div class="center-col">
+    <svg class="dragon-svg" width="120" height="120" viewBox="0 0 120 120">
+      <ellipse cx="60" cy="65" rx="28" ry="32" fill="#8b0000"/>
+      <ellipse cx="60" cy="65" rx="22" ry="26" fill="#6b0000"/>
+      <ellipse cx="60" cy="42" rx="22" ry="20" fill="#8b0000"/>
+      <ellipse cx="60" cy="38" rx="16" ry="15" fill="#6b0000"/>
+      <circle cx="51" cy="36" r="5" fill="#40c0c0"/>
+      <circle cx="69" cy="36" r="5" fill="#40c0c0"/>
+      <circle cx="51" cy="36" r="2.5" fill="#003333"/>
+      <circle cx="69" cy="36" r="2.5" fill="#003333"/>
+      <path d="M48 20 L44 8 L52 18" fill="#2a2a2a"/>
+      <path d="M72 20 L76 8 L68 18" fill="#2a2a2a"/>
+      <ellipse cx="44" cy="20" rx="5" ry="10" fill="#1a0000" transform="rotate(-15,44,20)"/>
+      <ellipse cx="76" cy="20" rx="5" ry="10" fill="#1a0000" transform="rotate(15,76,20)"/>
+      <circle cx="44" cy="10" r="4" fill="#ff0000" opacity=".8"/>
+      <circle cx="76" cy="10" r="4" fill="#ff0000" opacity=".8"/>
+      <path d="M30 50 Q10 35 15 60 Q20 80 35 70 Z" fill="#5a0000"/>
+      <path d="M90 50 Q110 35 105 60 Q100 80 85 70 Z" fill="#5a0000"/>
+      <ellipse cx="38" cy="93" rx="10" ry="6" fill="#aacccc"/>
+      <ellipse cx="62" cy="97" rx="10" ry="6" fill="#aacccc"/>
+      <path d="M88 85 Q100 95 95 100" stroke="#cc0000" stroke-width="3" fill="none"/>
+      <circle cx="94" cy="101" r="5" fill="#ff0000" opacity=".9"/>
+    </svg>
+    <div class="main-title title-glow">Dragon Primordial</div>
+    <div class="subtitle">Bestias y Monstruos</div>
+    <div class="badge">Era Salvaje</div>
+    <div class="social-row">
+      <div class="social-pill">YouTube @DragonPrimordial</div>
+      <div class="social-pill">Discord discord.gg/yWUcDuuuN</div>
+    </div>
+  </div>
+  <div class="top-bar"></div>
+  <div class="bottom-bar"></div>
+</div>
+
+<script>
+const COLS=['#ff0000','#cc0000','#ff4444','#ff6600','#ffaa00','#dd0000'];
+function spawnParticles(containerId){
+  const c=document.getElementById(containerId);
+  if(!c)return;
+  function mk(){
+    const p=document.createElement('div');
+    const sz=Math.random()*7+2;
+    const col=COLS[Math.floor(Math.random()*COLS.length)];
+    p.className='spark';
+    p.style.cssText=`width:${sz}px;height:${sz}px;background:${col};left:${Math.random()*100}%;bottom:${Math.random()*20}%;animation-duration:${1.5+Math.random()*2}s;animation-delay:${Math.random()*2}s;box-shadow:0 0 ${sz*2}px ${col};`;
+    c.appendChild(p);
+    setTimeout(()=>p.remove(),(3.5+Math.random()*2)*1000);
+  }
+  setInterval(mk,100);
+  for(let i=0;i<30;i++)mk();
+}
+spawnParticles('sp-intro');
+</script>
+</body>
+</html>
